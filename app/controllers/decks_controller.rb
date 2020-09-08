@@ -15,6 +15,13 @@ class DecksController < ApplicationController
         render json: deck
     end
 
+    def destroy
+       deck = Deck .find(params[:id])
+       deck.destroy
+        render json: "Deck is deleted!"
+    end
+    
+
 
     private
     def deck_params

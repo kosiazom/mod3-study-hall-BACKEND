@@ -11,7 +11,8 @@ class CardsController < ApplicationController
     end
 
     def create
-        card = Card.create(card_params)
+        byebug
+        card = Card.create( params.require(:card).permit(:front_side, :back_side, :category, :deck_id))
         render json: card
     end
     
