@@ -12,21 +12,36 @@ Deck.destroy_all
 User.destroy_all
 
 
-u1 = User.create(username: "Jina")
-u2 = User.create(username: "Kosi")
+users = User.create([
+    {
+        username: "Jina"
+    },
+    {
+        username: "Kosi"
+    }
+])
 
 
-d1 = Deck.create(category: "Java Script", user_id: u2)
-d2 = Deck.create(category: "Ruby", user_id: u1)
-d3 = Deck.create(category: "HTML/CSS", user_id: u1)
+decks = Deck.create([
+    {
+        category: "Javascript"
+    },
+    {
+        category: "Ruby"
+    },
+    {
+        category: "HTML/CSS"
+    }
+])
+
 
 
 cards = Card.create([
     {
         front_side: "Explain the difference between '==' and '==='?",
         back_side: " '==' checks only for equality in value whereas '===' is a stricter equality test and returns false if either the value or the type of the two variables are different.",
-        category: "Javascript",
-        deck_id: d1
+        category: "Javascript"
+        deck_id:
     },
     {
         front_side: "What would be the result of 3+2+'7'?",
