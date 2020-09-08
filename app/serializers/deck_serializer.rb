@@ -1,3 +1,3 @@
 class DeckSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :category
 end
