@@ -13,9 +13,8 @@ class CardsController < ApplicationController
     end
 
     def create
-        card = Card.create( params.require(:card).permit(:front_side, :back_side, :category, :deck_id))
-        # Deck.find_by(category:params[:category]) 
-        # byebug 
+        deck = Deck.find_by(category:params[:category]) 
+        card = Card.create(front_side: params[:front_side], back_side: params[:back_side], category: params[:category], deck_id: deck.id)
         render json: card
     end
     

@@ -1,5 +1,7 @@
 class DecksController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def index
         decks = Deck.all 
         render json: decks
@@ -11,7 +13,12 @@ class DecksController < ApplicationController
     end
 
     def create
-        deck = Deck.create(card_params)
+        deck = Deck.create(deck_params)
+        render json: deck
+    end
+
+    def update 
+        deck = Deck.update(deck_params)
         render json: deck
     end
 
