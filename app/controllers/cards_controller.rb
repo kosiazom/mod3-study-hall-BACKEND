@@ -1,5 +1,7 @@
 class CardsController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def index
         cards = Card.all 
         render json: cards, only: [:front_side, :back_side, :category, :deck_id]
@@ -11,8 +13,9 @@ class CardsController < ApplicationController
     end
 
     def create
-        byebug
         card = Card.create( params.require(:card).permit(:front_side, :back_side, :category, :deck_id))
+        # Deck.find_by(category:params[:category]) 
+        # byebug 
         render json: card
     end
     
@@ -22,9 +25,6 @@ class CardsController < ApplicationController
         render json: "Card is deleted!"
     end
     
-
-
-
 
     private
     def card_params

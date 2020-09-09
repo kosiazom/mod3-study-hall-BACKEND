@@ -14,7 +14,7 @@ User.destroy_all
 u1 = User.create(username: "Jina")
 u2 = User.create(username: "Kosi")
 
-d1 = Deck.create(category: "Java Script", user_id: u2.id)
+d1 = Deck.create(category: "Javascript", user_id: u2.id)
 d2 = Deck.create(category: "Ruby", user_id: u1.id)
 d3 = Deck.create(category: "HTML/CSS", user_id: u1.id)
 
@@ -34,7 +34,7 @@ cards = Card.create([
     {
         front_side: "How many data types are in Javascript?",
         back_side: "7. String, number, boolean, undefined, null symbol and object.",
-        category: "Javascript.",
+        category: "Javascript",
         deck_id: d1.id
     }, 
     { 
