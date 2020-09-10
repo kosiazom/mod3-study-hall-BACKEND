@@ -17,6 +17,12 @@ class CardsController < ApplicationController
         card = Card.create(front_side: params[:front_side], back_side: params[:back_side], category: params[:category], deck_id: deck.id)
         render json: card
     end
+
+    def update 
+        card = Card.find(params[:id])
+        card.update(card_params)
+        render json: card
+    end
     
     def destroy
         card = Card.find(params[:id])
