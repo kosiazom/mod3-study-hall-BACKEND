@@ -20,7 +20,8 @@ class CardsController < ApplicationController
 
     def update 
         card = Card.find(params[:id])
-        card.update(card_params)
+        #  byebug
+        card.update(front_side: params[:front_side], back_side: params[:back_side])
         render json: card
     end
     
