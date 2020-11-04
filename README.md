@@ -1,24 +1,5 @@
-# README
+## Backend
+This is the backend to Studyhall built with Ruby on rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## FrontEnd
+[Find Frontend code here](https://github.com/kosiazom/mod-3-project-FRONTEND)
